@@ -41,6 +41,39 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
 };
 
+/*
+ * unicode defenitions
+ */
+
+enum unicode_names {
+  U_SS_LOWER,
+  U_SS_UPPER,
+  U_NTIL_LOWER,
+  U_NTIL_UPPER,
+  U_CCED_LOWER,
+  U_CCED_UPPER,
+  U_IQUE_SYM,
+};
+
+const uint32_t unicode_map[] PROGMEM = {
+  [U_SS_LOWER]   = 0x00df,  // ß
+  [U_SS_UPPER]   = 0x1e9e,  // ẞ
+  [U_NTIL_LOWER] = 0x00f1,  // ñ
+  [U_NTIL_UPPER] = 0x00d1,  // Ñ
+  [U_CCED_LOWER] = 0x00e7,  // ç
+  [U_CCED_UPPER] = 0x00c7,  // Ç
+  [U_IQUE_SYM]   = 0x00bf,  // ¿
+};
+
+// ß and ẞ keycode.
+#define U_SS UP(U_SS_LOWER, U_SS_UPPER)
+// ñ and Ñ keycode.
+#define U_NTIL UP(U_NTIL_LOWER, U_NTIL_UPPER)
+// ç and Ç keycode.
+#define U_CCED UP(U_CCED_LOWER, U_CCED_UPPER)
+// ¿ keycode.
+#define U_IQUE UM(U_IQUE_SYM)
+
 
 /* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -95,9 +128,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, ES_NOT,
-    KC_DEL,  ES_GRV,  ES_ACUT, ES_DIAE, ES_EURO, ES_MORD, KC_EQL,  KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
-    _______, ES_BULT, ES_LABK, ES_CCED, ES_QUES, ES_IQUE, ES_NTIL, S(KC_NUHS), S(KC_NUBS), KC_HOME, KC_END,  _______,
+    KC_TILD, KC_EXLM, KC_AT,   KC_HASH,    KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, ES_NOT,
+    KC_DEL,  KC_LBRC, KC_QUOT, S(KC_QUOT), ES_EURO, ES_MORD, KC_EQL,  KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
+    _______, ES_BULT, ES_LABK, ES_CCED,    ES_QUES, ES_IQUE, ES_NTIL, S(KC_NUHS), S(KC_NUBS), KC_HOME, KC_END,  _______,
     _______, _______, _______, _______, _______, _______, _______, _______,    KC_MNXT,    KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
