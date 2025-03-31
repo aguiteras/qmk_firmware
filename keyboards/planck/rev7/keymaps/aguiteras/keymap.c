@@ -52,7 +52,17 @@ enum unicode_names {
   U_NTIL_UPPER,
   U_CCED_LOWER,
   U_CCED_UPPER,
+  U_QUES_SYM,
   U_IQUE_SYM,
+  U_EURO_SYM,
+  U_NOT_SYM,
+  U_MIDDOT_SYM,
+  U_DEGREE_SYM,
+  U_INVEXC_SYM,
+  U_ACCUT_SYM,
+  U_GRAVE_SYM,
+  U_DIAER_SYM,
+  U_MORD_SYM,
 };
 
 const uint32_t unicode_map[] PROGMEM = {
@@ -62,7 +72,17 @@ const uint32_t unicode_map[] PROGMEM = {
   [U_NTIL_UPPER] = 0x00d1,  // Ñ
   [U_CCED_LOWER] = 0x00e7,  // ç
   [U_CCED_UPPER] = 0x00c7,  // Ç
+  [U_QUES_SYM]   = 0x003f,  //
   [U_IQUE_SYM]   = 0x00bf,  // ¿
+  [U_EURO_SYM]   = 0x20ac,  //
+  [U_NOT_SYM]    = 0x00ac,  //
+  [U_MIDDOT_SYM] = 0x00b7,  //
+  [U_DEGREE_SYM] = 0x00b0,  //
+  [U_INVEXC_SYM] = 0x00a1,  //
+  [U_ACCUT_SYM]  = 0x0301,  //
+  [U_GRAVE_SYM]  = 0x0300,  //
+  [U_DIAER_SYM]  = 0x0308,   //
+  [U_MORD_SYM]   = 0x235b,  //
 };
 
 // ß and ẞ keycode.
@@ -72,7 +92,17 @@ const uint32_t unicode_map[] PROGMEM = {
 // ç and Ç keycode.
 #define U_CCED UP(U_CCED_LOWER, U_CCED_UPPER)
 // ¿ keycode.
+#define U_QUES UM(U_QUES_SYM)
 #define U_IQUE UM(U_IQUE_SYM)
+#define U_EURO UM(U_EURO_SYM)
+#define U_NOT UM(U_NOT_SYM)
+#define U_MIDDOT UM(U_MIDDOT_SYM)
+#define U_DEGREE UM(U_DEGREE_SYM)
+#define U_INVEXC UM(U_INVEXC_SYM)
+#define U_ACCUT UM(U_ACCUT_SYM)
+#define U_GRAVE UM(U_GRAVE_SYM)
+#define U_DIAER UM(U_DIAER_SYM)
+#define U_MORD UM(U_MORD_SYM)
 
 
 /* clang-format off */
@@ -122,16 +152,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Del  |  `   |  ´   |  ¨   |   €  |   º  |  ¡   |   _  |   +  |   {  |   }  |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  ·   |  <   |  Ç   |   ?  |   ¿  |  Ñ   |ISO ~ |ISO | | Home | End  |      |
+ * |      |  ·   |      |  Ç   |   ?  |   ¿  |  Ñ   |ISO ~ |ISO | | Home | End  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    KC_TILD, KC_EXLM, KC_AT,   KC_HASH,    KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, ES_NOT,
-    KC_DEL,  KC_LBRC, KC_QUOT, S(KC_QUOT), ES_EURO, ES_MORD, KC_EQL,  KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
-    _______, ES_BULT, ES_LABK, ES_CCED,    ES_QUES, ES_IQUE, ES_NTIL, S(KC_NUHS), S(KC_NUBS), KC_HOME, KC_END,  _______,
-    _______, _______, _______, _______, _______, _______, _______, _______,    KC_MNXT,    KC_VOLD, KC_VOLU, KC_MPLY
+    KC_TILD, KC_EXLM,  KC_AT,    KC_HASH, KC_DLR,  KC_PERC, KC_CIRC,  KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, U_NOT,
+    KC_DEL,  U_GRAVE,  U_ACCUT,  U_DIAER, U_EURO,  U_MORD,  U_INVEXC, KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
+    _______, U_MIDDOT, U_DEGREE, U_CCED,  U_QUES,  U_IQUE,  U_NTIL,   S(KC_NUHS), S(KC_NUBS), KC_HOME, KC_END,  _______,
+    _______, _______,  _______,  _______, _______, _______, _______,  _______,    KC_MNXT,    KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
 /* Raise
