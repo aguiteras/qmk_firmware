@@ -72,17 +72,17 @@ const uint32_t unicode_map[] PROGMEM = {
   [U_NTIL_UPPER] = 0x00d1,  // Ñ
   [U_CCED_LOWER] = 0x00e7,  // ç
   [U_CCED_UPPER] = 0x00c7,  // Ç
-  [U_QUES_SYM]   = 0x003f,  //
+  [U_QUES_SYM]   = 0x003f,  // ?
   [U_IQUE_SYM]   = 0x00bf,  // ¿
-  [U_EURO_SYM]   = 0x20ac,  //
-  [U_NOT_SYM]    = 0x00ac,  //
-  [U_MIDDOT_SYM] = 0x00b7,  //
-  [U_DEGREE_SYM] = 0x00b0,  //
-  [U_INVEXC_SYM] = 0x00a1,  //
+  [U_EURO_SYM]   = 0x20ac,  // €
+  [U_NOT_SYM]    = 0x00ac,  // ¬
+  [U_MIDDOT_SYM] = 0x00b7,  // ·
+  [U_DEGREE_SYM] = 0x00b0,  // °
+  [U_INVEXC_SYM] = 0x00a1,  // ¡
   [U_ACCUT_SYM]  = 0x0301,  //
   [U_GRAVE_SYM]  = 0x0300,  //
-  [U_DIAER_SYM]  = 0x0308,   //
-  [U_MORD_SYM]   = 0x235b,  //
+  [U_DIAER_SYM]  = 0x0308,  //
+  [U_MORD_SYM]   = 0x235b,  // ⍛
 };
 
 // ß and ẞ keycode.
@@ -152,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Del  |  `   |  ´   |  ¨   |   €  |   º  |  ¡   |   _  |   +  |   {  |   }  |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  ·   |      |  Ç   |   ?  |   ¿  |  Ñ   |ISO ~ |ISO | | Home | End  |      |
+ * |      |  ·   |  °   |  Ç   |   ?  |   ¿  |  Ñ   |ISO ~ |ISO | | Home | End  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
