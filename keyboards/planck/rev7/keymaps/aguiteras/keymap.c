@@ -152,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Del  |  `   |  ´   |  ¨   |   €  |   º  |  ¡   |   _  |   +  |   {  |   }  |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  ·   |  °   |  Ç   |   ?  |   ¿  |  Ñ   | Home | End  |Ms Bt1|Ms Bt2|Ms Bt3|
+ * |      |  °   |  ·   |  Ç   |   ?  |   ¿  |  Ñ   | Home | End  |Ms Bt1|Ms Bt2|Ms Bt3|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Ms L | Ms D | Ms U | Ms R |
  * `-----------------------------------------------------------------------------------'
@@ -160,7 +160,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_planck_grid(
     KC_TILD, KC_EXLM,  KC_AT,    KC_HASH, KC_DLR,  KC_PERC, KC_CIRC,  KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, U_NOT,
     KC_DEL,  U_GRAVE,  U_ACCUT,  U_DIAER, U_EURO,  U_MORD,  U_INVEXC, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
-    _______, U_MIDDOT, U_DEGREE, U_CCED,  U_QUES,  U_IQUE,  U_NTIL,   KC_HOME, KC_END,  MS_BTN1, MS_BTN2, MS_BTN3,
+    _______, U_DEGREE, U_MIDDOT, U_CCED,  U_QUES,  U_IQUE,  U_NTIL,   KC_HOME, KC_END,  MS_BTN1, MS_BTN2, MS_BTN3,
     _______, _______,  _______,  _______, _______, _______, _______,  _______, MS_LEFT, MS_DOWN, MS_UP,   MS_RGHT
 ),
 
